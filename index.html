@@ -27,12 +27,22 @@
             font-weight: bold;
             color: #007BFF;
         }
+        #random-fact {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
-    <h1>10 Interesting Facts About Planets</h1>
-    <div id="facts-container"></div>
+    <h1>Random Fact About Planets</h1>
+    <div id="random-fact" class="fact"></div>
+    <button id="fact-button">Show Random Fact</button>
 
     <script>
         const facts = [
@@ -48,13 +58,13 @@
             { title: "Exoplanets", description: "Beyond our solar system, astronomers have discovered thousands of exoplanets (planets orbiting other stars). Some of these exoplanets are located in the 'habitable zone,' where conditions might be right for liquid water and potentially life." }
         ];
 
-        const factsContainer = document.getElementById('facts-container');
+        const randomFactContainer = document.getElementById('random-fact');
+        const factButton = document.getElementById('fact-button');
 
-        facts.forEach(fact => {
-            const factDiv = document.createElement('div');
-            factDiv.className = 'fact';
-            factDiv.innerHTML = `<div class="fact-title">${fact.title}</div><div>${fact.description}</div>`;
-            factsContainer.appendChild(factDiv);
+        factButton.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const randomFact = facts[randomIndex];
+            randomFactContainer.innerHTML = `<div class="fact-title">${randomFact.title}</div><div>${randomFact.description}</div>`;
         });
     </script>
 
