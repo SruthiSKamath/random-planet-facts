@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facts About Planets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .fact {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .fact-title {
+            font-weight: bold;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>10 Interesting Facts About Planets</h1>
+    <div id="facts-container"></div>
+
+    <script>
+        const facts = [
+            { title: "Mercury", description: "Mercury is the closest planet to the Sun and has no atmosphere, which means it experiences extreme temperature fluctuations, ranging from very hot during the day to extremely cold at night." },
+            { title: "Venus", description: "Venus is often called Earth's 'sister planet' due to its similar size and composition. However, it has a thick atmosphere composed mainly of carbon dioxide, leading to a runaway greenhouse effect and surface temperatures hot enough to melt lead." },
+            { title: "Earth", description: "Earth is the only known planet to support life. It has a unique atmosphere that contains oxygen and water, which are essential for life as we know it." },
+            { title: "Mars", description: "Mars is known as the 'Red Planet' due to its iron oxide (rust) surface. It has the largest volcano in the solar system, Olympus Mons, which is about 13.6 miles (22 kilometers) high." },
+            { title: "Jupiter", description: "Jupiter is the largest planet in our solar system and has a strong magnetic field. It is known for its Great Red Spot, a giant storm that has been raging for at least 350 years." },
+            { title: "Saturn", description: "Saturn is famous for its stunning rings, which are made up of ice and rock particles. It is the second-largest planet in the solar system and has over 80 known moons." },
+            { title: "Uranus", description: "Uranus is unique because it rotates on its side, making its axis tilt about 98 degrees. This unusual tilt results in extreme seasonal variations." },
+            { title: "Neptune", description: "Neptune is the farthest planet from the Sun and has the strongest winds in the solar system, reaching speeds of up to 1,200 miles per hour (2,000 kilometers per hour)." },
+            { title: "Pluto", description: "Once considered the ninth planet, Pluto is now classified as a 'dwarf planet.' It has a highly elliptical orbit and is primarily made of ice and rock." },
+            { title: "Exoplanets", description: "Beyond our solar system, astronomers have discovered thousands of exoplanets (planets orbiting other stars). Some of these exoplanets are located in the 'habitable zone,' where conditions might be right for liquid water and potentially life." }
+        ];
+
+        const factsContainer = document.getElementById('facts-container');
+
+        facts.forEach(fact => {
+            const factDiv = document.createElement('div');
+            factDiv.className = 'fact';
+            factDiv.innerHTML = `<div class="fact-title">${fact.title}</div><div>${fact.description}</div>`;
+            factsContainer.appendChild(factDiv);
+        });
+    </script>
+
+</body>
+</html>
